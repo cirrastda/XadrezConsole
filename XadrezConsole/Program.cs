@@ -24,12 +24,12 @@ namespace XadrezConsole
         {
             List<MovimentoXadrez> movimentosTeste = new List<MovimentoXadrez>();
 
-            if (args[0] == "teste") _teste = true;
-            
-            string funcao = args[1];
+            if (args.ElementAtOrDefault(0) != null && args[0] == "teste") _teste = true;
             
             if (_teste)
             {
+                string funcao = args[1];
+
                 MethodInfo method = typeof(TestePartidaDeXadrez).GetMethod(funcao);
                 if (method == null) throw new MethodException();
 

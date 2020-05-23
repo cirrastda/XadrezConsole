@@ -1,7 +1,8 @@
 {
   "profiles": {
     "XadrezConsole": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "teste TesteEnPassant"
     }
   }
 }
