@@ -55,6 +55,13 @@ namespace Jogo.Tabuleiro
             return p;
         }
 
+        public Peca TrocarPeca(Posicao posicao, Peca novaPeca, bool reverteMovimento = false)
+        {
+            Peca p = RemoverPeca(posicao);
+            AdicionarPeca(novaPeca, posicao);
+
+            return p;
+        }
         private bool PosicaoOcupada(Posicao pos)
         {
             ValidarPosicao(pos);

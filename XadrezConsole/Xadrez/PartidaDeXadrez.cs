@@ -83,6 +83,13 @@ namespace XadrezConsole.Xadrez
                 Tabuleiro.RemoverPeca(PecaVulneravelEnPassant.Posicao);
                 _capturadas.Add(pecaCapturada);
             }
+            // #JogadaEspecial Promocao
+            if ((p is Peao) && ( ((p.Cor==Cor.Branco) && (destino.Linha == 0)) || ((p.Cor == Cor.Preto) && (destino.Linha == Tabuleiro.Linhas - 1)) )) {
+                Rainha novaRainha = new Rainha(Tabuleiro, p.Cor);
+                _pecas.Remove(p);
+                Tabuleiro.TrocarPeca(destino, novaRainha);
+                _pecas.Add(novaRainha);
+            }
 
             return pecaCapturada;
         }
@@ -112,6 +119,7 @@ namespace XadrezConsole.Xadrez
             {
                 Tabuleiro.MoverPeca(new Posicao(origem.Linha, origem.Coluna - 1), new Posicao(origem.Linha, origem.Coluna - 4), true);
             }
+
 
         }
 

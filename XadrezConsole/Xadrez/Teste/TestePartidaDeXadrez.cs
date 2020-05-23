@@ -61,6 +61,21 @@ namespace XadrezConsole.Xadrez.Teste
             return movimentos;
         }
 
+        static public List<MovimentoXadrez> TestePromocao()
+        {
+            List<MovimentoXadrez> movimentos = new List<MovimentoXadrez>();
+            movimentos.Add(new MovimentoXadrez("f2", "f4"));
+            movimentos.Add(new MovimentoXadrez("g7", "g5"));
+            movimentos.Add(new MovimentoXadrez("f4", "g5"));
+            movimentos.Add(new MovimentoXadrez("g8", "h6"));
+            movimentos.Add(new MovimentoXadrez("g5", "g6"));
+            movimentos.Add(new MovimentoXadrez("h6", "g4"));
+            movimentos.Add(new MovimentoXadrez("g6", "g7"));
+            movimentos.Add(new MovimentoXadrez("g4", "e5"));
+            movimentos.Add(new MovimentoXadrez("g7", "f8"));
+            return movimentos;
+        }
+
 
 
     }
